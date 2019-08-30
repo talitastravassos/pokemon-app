@@ -1,0 +1,14 @@
+<div class="container m-4">
+    <form #s="ngForm" (ngSubmit)="submit(s)"> 
+        <div class="input-group mb-3">
+            <input ngModel name="searchPokemon" type="text" class="form-control" placeholder="Search Pokemon">
+            <div class="input-group-append">
+                <button class="btn btn-outline-warning">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <div *ngIf="isSearch">
+        search
+    </div>
+</div>
