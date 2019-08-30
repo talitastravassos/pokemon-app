@@ -19,6 +19,19 @@ export class PokemonListComponent implements OnInit {
       })
 
     }
+
+    getImage(pokemonURL){
+      let url = "https://www.serebii.net/art/th/"
+      let id;
+
+      this.pokemonServive.getPokemon(pokemonURL)
+       .subscribe( (res: any) => {
+         id = res.id
+       })
+
+      return url + id + ".png"
+    }
+
   ngOnInit() {
   }
 

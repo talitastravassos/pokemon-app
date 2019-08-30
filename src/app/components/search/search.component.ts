@@ -9,7 +9,8 @@ import { FormGroup } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
 
-  isSearch: boolean 
+  isSearch: boolean
+  pokemon: any 
 
   constructor(private pokemonServive: PokemonService) { }
 
@@ -17,9 +18,17 @@ export class SearchComponent implements OnInit {
     this.pokemonServive.searchPokemon(search.value.searchPokemon)
       .subscribe( (res: any) => {
         console.log(res)
+        this.pokemon = res
         this.isSearch = true
       })
   }
+
+  getImage(id){
+    let url = "https://www.serebii.net/art/th/"
+    console.log(url + id + ".png")
+    return url + id + ".png"
+  }
+
 
   ngOnInit() {
   }

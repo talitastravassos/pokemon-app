@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">  
         <div class="card text-center col-lg-3 col-md-4 m-1 mf-0" *ngFor="let pokemon of pokemonList.results">
-            <!-- <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card"> -->
+            <img class="card-img-top" src="{{ getImage(pokemon.url) }}" alt="Imagem de capa do card">
             <div class="card-body">
             <h5 class="card-title"> {{ pokemon.name }}</h5>
             <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
