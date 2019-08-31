@@ -11,8 +11,6 @@ import { SearchComponent } from './components/search/search.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { RouterModule } from '@angular/router';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,16 +26,6 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { 
-        path: "", 
-        component: HomeComponent 
-      },
-      { 
-        path: "yourpokemons", 
-        component: CaughtPokemonsListComponent 
-      }
-    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
