@@ -25,7 +25,6 @@ export class SearchComponent implements OnInit {
 
   getImage(id){
     let url = "https://www.serebii.net/art/th/"
-    console.log(url + id + ".png")
     return url + id + ".png"
   }
 

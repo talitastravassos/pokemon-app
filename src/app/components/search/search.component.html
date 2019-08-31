@@ -14,8 +14,12 @@
                 <img class="card-img-top" src="{{ getImage(pokemon.id) }}" alt="Imagem do Pokemon">
                 <div class="card-body">
                 <h5 class="card-title"> {{ pokemon.name }}</h5>
-                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                <a href="#" class="btn btn-warning">Catch Pokemon!</a>
+                <p class="card-text">Height: {{ pokemon.height }} // Weight: {{ pokemon.weight }}</p>
+                <h6>Skills</h6>
+                <ul class="list-group list-group-flush" *ngFor="let skill of pokemon.abilities">
+                    <li class="list-group-item">{{ skill.ability.name }}</li>
+                </ul>
+                <a href="#" class="btn btn-warning mt-2">Catch Pokemon!</a>
                 </div>
             </div>
         </div>
