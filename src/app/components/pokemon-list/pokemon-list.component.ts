@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit {
 
-  pokemonList: any[]
+  pokemonList: any[] = []
 
   constructor(private pokemonServive: PokemonService) {
 
