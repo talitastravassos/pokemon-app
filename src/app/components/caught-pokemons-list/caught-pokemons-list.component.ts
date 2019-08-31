@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon-service.service';
 
 @Component({
   selector: 'caught-pokemons-list',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaughtPokemonsListComponent implements OnInit {
 
-  constructor() { }
+  caughtPokemons: any[]
+
+  constructor(private pokemonServive: PokemonService) {
+    this.caughtPokemons = this.pokemonServive.getPokemonStorage()
+    console.log(this.caughtPokemons)
+   }
+
+   getImage(id){
+    let url = "https://www.serebii.net/art/th/"
+    return url + id + ".png"
+  }
 
   ngOnInit() {
   }

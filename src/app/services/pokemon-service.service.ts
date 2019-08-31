@@ -35,6 +35,10 @@ export class PokemonService {
     localStorage.setItem("caughtPokemon", JSON.stringify(this.caughtPokemon))
   }
 
+  getPokemonStorage(){
+    return JSON.parse(localStorage.getItem("caughtPokemon"))
+  }
+
   setCatchPokemon(pokemon){
     if ((typeof pokemon) !== "string"){
       this.setPokemonStorage(pokemon)
