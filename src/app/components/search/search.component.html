@@ -3,7 +3,14 @@
         <div class="input-group mb-3">
             <input ngModel name="searchPokemon" type="text" class="form-control" placeholder="Search Pokemon">
             <div class="input-group-append">
-                <button class="btn btn-outline-warning">Search</button>
+                <button class="btn btn-outline-warning">
+                    Search
+                    <img 
+                        src="../../../assets/pokeball-search.svg" 
+                        alt="triangle with all three sides equal"
+                        height="24px"
+                        width="50px" />
+                </button>
             </div>
         </div>
     </form>
@@ -19,7 +26,14 @@
                 <ul class="list-group list-group-flush" *ngFor="let skill of pokemon.abilities">
                     <li class="list-group-item">{{ skill.ability.name }}</li>
                 </ul>
-                <a (click)="catchPokemon(pokemon)" class="btn btn-warning mt-2">Catch Pokemon!</a>
+                <a (click)="catchPokemon(pokemon)" class="btn btn-warning mt-2">
+                    Catch Pokemon!
+                    <img 
+                        src="../../../assets/pokeball.svg" 
+                        alt="triangle with all three sides equal"
+                        height="24px"
+                        width="50px" />
+                </a>
                 </div>
             </div>
         </div>
