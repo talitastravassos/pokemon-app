@@ -1,4 +1,4 @@
-<div class="container m-4">
+<div class="container justify-content-center mt-5">
     <form #s="ngForm" (ngSubmit)="submit(s)"> 
         <div class="input-group mb-3">
             <input ngModel name="searchPokemon" type="text" class="form-control" placeholder="Search Pokemon">
@@ -19,7 +19,7 @@
                 <ul class="list-group list-group-flush" *ngFor="let skill of pokemon.abilities">
                     <li class="list-group-item">{{ skill.ability.name }}</li>
                 </ul>
-                <a href="#" class="btn btn-warning mt-2">Catch Pokemon!</a>
+                <a (click)="catchPokemon(pokemon)" class="btn btn-warning mt-2">Catch Pokemon!</a>
                 </div>
             </div>
         </div>

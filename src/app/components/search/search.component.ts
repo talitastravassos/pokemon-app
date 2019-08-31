@@ -27,6 +27,10 @@ export class SearchComponent implements OnInit {
     let url = "https://www.serebii.net/art/th/"
     return url + id + ".png"
   }
+  
+  catchPokemon(pokemon){
+    this.pokemonServive.setCatchPokemon(pokemon)
+  }
 
 
   ngOnInit() {

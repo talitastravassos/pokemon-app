@@ -26,6 +26,11 @@ export class PokemonListComponent implements OnInit {
       return url + id + ".png"
     }
 
+    catchPokemon(pokemon){
+      console.log(pokemon.url)
+      this.pokemonServive.setCatchPokemon(pokemon.url)
+    }
+
   ngOnInit() {
   }
 

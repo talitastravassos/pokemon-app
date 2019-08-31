@@ -4,7 +4,7 @@
             <img class="card-img-top m-2" src="{{ getImage(i + 1) }}" width="100" height="250" alt="Imagem de capa do card">
             <div class="card-body">
             <h5 class="card-title"> {{ pokemon.name}}</h5>
-            <a href="#" class="btn btn-warning">Catch Pokemon!</a>
+            <a (click)="catchPokemon(pokemon)" class="btn btn-warning">Catch Pokemon!</a>
             </div>
         </div>
     </div> 
