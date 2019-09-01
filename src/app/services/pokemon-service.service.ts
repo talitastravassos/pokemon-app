@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NotificationsService } from './notifications.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class PokemonService {
   public isSearch: boolean = false;
   public caughtPokemon = []
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private notificationService: NotificationsService) { }
 
   getPokemonList(){
     return this.http.get(this.url)
@@ -42,10 +43,12 @@ export class PokemonService {
   setCatchPokemon(pokemon){
     if ((typeof pokemon) !== "string"){
       this.setPokemonStorage(pokemon)
+      this.notificationService.successNotification("You got this Pokemon!", "Cool!")
     } else {
       this.getPokemon(pokemon)
         .subscribe((res: any) => {
           this.setPokemonStorage(res)
+          this.notificationService.successNotification("You got this Pokemon!", "Cool!")
         })
     }
   }

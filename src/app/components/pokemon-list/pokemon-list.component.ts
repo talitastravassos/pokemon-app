@@ -1,6 +1,5 @@
 import { PokemonService } from './../../services/pokemon-service.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'pokemon-list',
   templateUrl: './pokemon-list.component.html',
@@ -27,7 +26,6 @@ export class PokemonListComponent implements OnInit {
     }
 
     catchPokemon(pokemon){
-      console.log(pokemon.url)
       this.pokemonServive.setCatchPokemon(pokemon.url)
     }
 
