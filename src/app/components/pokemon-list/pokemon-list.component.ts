@@ -17,7 +17,7 @@ export class PokemonListComponent implements OnInit {
         this.pokemonList = res.results
         console.log(this.pokemonList)
       })
-    }
+  }
 
     getImage(id){
       let url = "https://www.serebii.net/art/th/"
