@@ -10,17 +10,16 @@ export class CaughtPokemonsListComponent implements OnInit {
 
   caughtPokemons: any[]
 
-  constructor(private pokemonServive: PokemonService) {
-    this.caughtPokemons = this.pokemonServive.getPokemonStorage()
-    console.log(this.caughtPokemons)
-   }
+  constructor(private pokemonServive: PokemonService) { }
 
-   getImage(id){
+  getImage(id) {
     let url = "https://www.serebii.net/art/th/"
     return url + id + ".png"
   }
 
   ngOnInit() {
+    this.caughtPokemons = this.pokemonServive.getPokemonStorage()
+    console.log(this.caughtPokemons)
   }
 
 }

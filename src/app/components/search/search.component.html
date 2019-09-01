@@ -1,15 +1,12 @@
 <div class="container justify-content-center mt-5">
-    <form #s="ngForm" (ngSubmit)="submit(s)"> 
+    <form #s="ngForm" (ngSubmit)="submit(s)">
         <div class="input-group mb-3">
             <input ngModel name="searchPokemon" type="text" class="form-control" placeholder="Search Pokemon">
             <div class="input-group-append">
                 <button class="btn btn-outline-warning">
                     Search
-                    <img 
-                        src="../../../assets/pokeball-search.svg" 
-                        alt="triangle with all three sides equal"
-                        height="24px"
-                        width="50px" />
+                    <img src="../../../assets/pokeball-search.svg" alt="triangle with all three sides equal"
+                        height="24px" width="50px" />
                 </button>
             </div>
         </div>
@@ -18,22 +15,20 @@
     <div *ngIf="isSearch">
         <div class="d-flex justify-content-center">
             <div class="card text-center col-lg-3 col-md-5 m-1 mf-0">
-                <img class="card-img-top m-2" src="{{ getImage(pokemon.id) }}"  width="100" height="250" alt="Imagem do Pokemon">
+                <img class="card-img-top m-2" src="{{ getImage(pokemon.id) }}" width="100" height="250"
+                    alt="Image of Pokémon">
                 <div class="card-body">
-                <h5 class="card-title"> {{ pokemon.name }}</h5>
-                <p class="card-text">Height: {{ pokemon.height }} // Weight: {{ pokemon.weight }}</p>
-                <h6>Skills</h6>
-                <ul class="list-group list-group-flush" *ngFor="let skill of pokemon.abilities">
-                    <li class="list-group-item">{{ skill.ability.name }}</li>
-                </ul>
-                <a (click)="catchPokemon(pokemon)" class="btn btn-warning mt-2">
-                    Catch Pokemon!
-                    <img 
-                        src="../../../assets/pokeball.svg" 
-                        alt="triangle with all three sides equal"
-                        height="24px"
-                        width="50px" />
-                </a>
+                    <h5 class="card-title"> {{ pokemon.name }}</h5>
+                    <p class="card-text">Height: {{ pokemon.height }} // Weight: {{ pokemon.weight }}</p>
+                    <h6>Skills</h6>
+                    <ul class="list-group list-group-flush" *ngFor="let skill of pokemon.abilities">
+                        <li class="list-group-item">{{ skill.ability.name }}</li>
+                    </ul>
+                    <a (click)="catchPokemon(pokemon)" class="btn btn-warning mt-2">
+                        Catch Pokemon!
+                        <img src="../../../assets/pokeball.svg" alt="triangle with all three sides equal" height="24px"
+                            width="50px" />
+                    </a>
                 </div>
             </div>
         </div>

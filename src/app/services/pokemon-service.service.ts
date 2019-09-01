@@ -7,7 +7,6 @@ import { NotificationsService } from './notifications.service';
 export class PokemonService {
 
   private url = "https://pokeapi.co/api/v2/pokemon/"
-  public isSearch: boolean = false;
   public caughtPokemon = []
 
   constructor(

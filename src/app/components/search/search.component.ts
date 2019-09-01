@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon-service.service';
 import { FormGroup } from '@angular/forms';
 import { NotificationsService } from 'src/app/services/notifications.service';
@@ -8,43 +8,39 @@ import { NotificationsService } from 'src/app/services/notifications.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   isSearch: boolean
-  pokemon: any 
+  pokemon: any
 
   constructor(
-    private pokemonServive: PokemonService,  
+    private pokemonServive: PokemonService,
     private notificationService: NotificationsService) { }
 
-  submit(search: FormGroup){
+  submit(search: FormGroup) {
     this.pokemonServive.searchPokemon(search.value.searchPokemon)
-      .subscribe( 
+      .subscribe(
         (res: any) => {
           console.log(res)
           this.pokemon = res
           this.isSearch = true
-      },
-      (error: Response) => {
-        if(error.status === 404){
-          this.notificationService.errorNotification("Pokemon not found :/", "Sorry")
-        } else {
-          this.notificationService.errorNotification("Something's wrong :/", "Sorry")
-        }
-      })
+        },
+        (error: Response) => {
+          if (error.status === 404) {
+            this.notificationService.errorNotification("Pokemon not found :/", "Sorry")
+          } else {
+            this.notificationService.errorNotification("Something's wrong :/", "Sorry")
+          }
+        })
   }
 
-  getImage(id){
+  getImage(id) {
     let url = "https://www.serebii.net/art/th/"
     return url + id + ".png"
   }
-  
-  catchPokemon(pokemon){
+
+  catchPokemon(pokemon) {
     this.pokemonServive.setCatchPokemon(pokemon)
-  }
-
-
-  ngOnInit() {
   }
 
 }
