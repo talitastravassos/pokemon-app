@@ -13,10 +13,10 @@ export class PokemonListComponent implements OnInit {
 
     this.pokemonServive.getPokemonList()
       .subscribe( (res: any ) => {
-        this.pokemonList = res
+        this.pokemonServive.setNextPageStorage(res.next)
+        this.pokemonList = res.results
         console.log(this.pokemonList)
       })
-
     }
 
     getImage(id){
@@ -27,6 +27,15 @@ export class PokemonListComponent implements OnInit {
 
     catchPokemon(pokemon){
       this.pokemonServive.setCatchPokemon(pokemon.url)
+    }
+
+    getNextPage(){
+      this.pokemonServive.getNextPage()
+        .subscribe( (res: any) => {
+          this.pokemonList = this.pokemonList.concat(res.results)
+          this.pokemonServive.setNextPageStorage(res.next)
+        })
+
     }
 
   ngOnInit() {

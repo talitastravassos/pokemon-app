@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NotificationsService } from './notifications.service';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -11,20 +10,29 @@ export class PokemonService {
   public isSearch: boolean = false;
   public caughtPokemon = []
 
-  constructor(private http: HttpClient, private notificationService: NotificationsService) { }
+  constructor(
+    private http: HttpClient, 
+    private notificationService: NotificationsService) { }
 
+  /* HTTP Requests */
+  
   getPokemonList(){
     return this.http.get(this.url)
   }
 
   searchPokemon(name){
-    this.isSearch = true
     return this.http.get(this.url + name)
   }
 
   getPokemon(url) {
     return this.http.get(url)
   }
+
+  getNextPage(){
+    return this.http.get(this.getNextPageStorage().toString())
+  }
+
+  /* localStorage stuffs */
 
   setPokemonStorage(pokemon){
     if ((JSON.parse(localStorage.getItem("caughtPokemon")) !== null)){
@@ -51,6 +59,14 @@ export class PokemonService {
           this.notificationService.successNotification("You got this Pokemon!", "Cool!")
         })
     }
+  }
+
+  setNextPageStorage(url){
+    localStorage.setItem("nextPage", url)
+  }
+
+  getNextPageStorage(){
+    return localStorage.getItem("nextPage")
   }
 
 }
