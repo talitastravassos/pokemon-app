@@ -28,8 +28,10 @@ export class SearchComponent {
         (error: Response) => {
           if (error.status === 404) {
             this.notificationService.errorNotification("Pokemon not found :/", "Sorry")
+            this.isSearch = false
           } else {
             this.notificationService.errorNotification("Something's wrong :/", "Sorry")
+            this.isSearch = false
           }
         })
   }
@@ -41,6 +43,7 @@ export class SearchComponent {
 
   catchPokemon(pokemon) {
     this.pokemonServive.setCatchPokemon(pokemon)
+    this.isSearch = false
   }
 
 }
