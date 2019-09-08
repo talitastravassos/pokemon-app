@@ -14,4 +14,7 @@ In the project directory:
 
 - `ng serve`
 
+### Live Demo
+- https://tst-pokemonapp.netlify.com/
+
 That's it 😉
