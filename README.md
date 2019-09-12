@@ -14,6 +14,9 @@ In the project directory:
 
 - `ng serve`
 
+### Screenshot
+![PokeApp Screenshot](https://i.imgur.com/kb6x4V7.png)
+
 ### Live Demo
 - https://tst-pokemonapp.netlify.com/
 
